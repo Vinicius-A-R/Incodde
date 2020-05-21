@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <span>Sistema Bibliotecario</span>
+    </header>
+
+    <main>
+      <section id="display">
+        <div class="display">
+          <h2 class="user-display">Vinicius</h2>
+          <h4>Seja bem-vindo</h4>
+        </div>
+      </section>
+
+      <section id="list">
+        <div class="list-user">
+          <label>New User</label>
+          <input id="user" type="text" autofocus />
+          <button id="user">New</button>
+
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>USER</th>
+              </tr>
+            </thead>
+            <tbody class="body-user"></tbody>
+          </table>
+        </div>
+
+        <div class="list-book">
+          <label>New Book</label>
+          <input id="book" type="text" />
+          <button id="btnBook">New</button>
+
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>USER</th>
+              </tr>
+            </thead>
+            <tbody class="body-book"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
