@@ -4,14 +4,15 @@ const bodyUser = document.querySelector('.body-user');
 
 let userList = [
   {
-    id: '01',
-    name: 'vinicius',
-    books: [
-      {
-        id: '01',
-        book: 'Senhor dos aneis',
-      },
-    ],
+    id: '001',
+    name: 'Vinicius',
+  },
+];
+
+let bookList = [
+  {
+    id: '001',
+    book: 'Senhor dos Aneis',
   },
 ];
 
@@ -21,16 +22,17 @@ userList.map((list) => {
   let td1 = document.createElement('td');
   let td2 = document.createElement('td');
 
+  console.log(list);
+
   if (list !== '') {
     let n = 0;
     let id = '';
-    userList.map((el) => {
-      bodyUser.appendChild(tr);
-      td1.innerHTML = `${el.id}`;
-      td2.innerHTML = `${el.name}`;
-      tr.appendChild(td1);
-      tr.appendChild(td2);
-    });
+
+    bodyUser.appendChild(tr);
+    td1.innerHTML = `${list.id}`;
+    td2.innerHTML = `${list.name}`;
+    tr.appendChild(td1);
+    tr.appendChild(td2);
   }
 });
 
@@ -42,36 +44,44 @@ btnUser.addEventListener('click', (e) => {
     user.placeholder = 'Invalid User!';
   } else {
     let n = 0;
-    let check = userList.find((el) => el.name === user.value);
-    // let check = userList.find((el) => console.log('name: ' + el.name));
-    console.log('name ' + check);
+    let check;
 
-    if (check === user.value) {
+    userList.map((el) => {
+      if (el.name === user.value) {
+        check = true;
+      }
+    });
+
+    if (check) {
       user.placeholder = 'User already exists!';
     } else {
-      userList.name = user.value;
-
       let tr = document.createElement('tr');
       let td1 = document.createElement('td');
       let td2 = document.createElement('td');
 
-      let n = userList[0].id;
-      let id = '';
-      userList.map((el) => {
-        id = '0' + parseInt(n);
-        n++;
-        console.log(n);
-        userList.id = id;
+      let newUser = {
+        id: '',
+        name: '',
+        books: [
+          {
+            id: '',
+            book: '',
+          },
+        ],
+      };
 
-        bodyUser.appendChild(tr);
-        td1.innerHTML = `${id}`;
-        td2.innerHTML = `${user.value}`;
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-      });
+      let date = new Date();
+      newUser.id = date.getMilliseconds();
+      newUser.name = user.value;
+
+      userList.push(newUser);
+
+      bodyUser.appendChild(tr);
+      td1.innerHTML = `${newUser.id}`;
+      td2.innerHTML = `${newUser.name}`;
+      tr.appendChild(td1);
+      tr.appendChild(td2);
     }
-
-    console.log(userList);
 
     user.value = '';
     user.addEventListener('focus', () => (user.placeholder = ''));
@@ -83,20 +93,63 @@ const btnBook = document.querySelector('#btnBook');
 const bodyBook = document.querySelector('.body-book');
 
 //List Books
-userList.map((list) => {
+bookList.map((list) => {
   let tr = document.createElement('tr');
   let td1 = document.createElement('td');
   let td2 = document.createElement('td');
 
   if (list !== '') {
+    bodyBook.appendChild(tr);
+    td1.innerHTML = `${list.id}`;
+    td2.innerHTML = `${list.book}`;
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+  }
+});
+
+//create a new user
+btnBook.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  if (book.value === '') {
+    book.placeholder = 'Invalid User!';
+  } else {
     let n = 0;
-    let id = '';
-    list.books.map((el) => {
+    let check;
+
+    bookList.map((el) => {
+      console.log(el);
+      if (el.book === book.value) {
+        check = true;
+      }
+    });
+
+    if (check) {
+      book.placeholder = 'Book already exists!';
+    } else {
+      let tr = document.createElement('tr');
+      let td1 = document.createElement('td');
+      let td2 = document.createElement('td');
+
+      let newBook = {
+        id: '',
+        book: '',
+      };
+
+      let date = new Date();
+      newBook.id = date.getMilliseconds();
+      newBook.book = book.value;
+
+      bookList.push(newBook);
+
       bodyBook.appendChild(tr);
-      td1.innerHTML = `${el.id}`;
-      td2.innerHTML = `${el.book}`;
+      td1.innerHTML = `${newBook.id}`;
+      td2.innerHTML = `${newBook.book}`;
       tr.appendChild(td1);
       tr.appendChild(td2);
-    });
+    }
+
+    book.value = '';
+    book.addEventListener('focus', () => (book.placeholder = ''));
   }
 });
