@@ -1,5 +1,5 @@
 <h1>How to start</h1>
-  <h3> First of all  dependencies:</h3>
+  <h3> First of all install the dependencies:</h3>
     <ul>
       <li>npm install</li>
       <li>npm run dev</li>
