@@ -16,25 +16,29 @@ let bookList = [
   },
 ];
 
-//list users
-userList.map((list) => {
-  let tr = document.createElement('tr');
-  let td1 = document.createElement('td');
-  let td2 = document.createElement('td');
+function showList(list) {
+  //list users
+  list.map((item) => {
+    let tr = document.createElement('tr');
+    let td1 = document.createElement('td');
+    let td2 = document.createElement('td');
 
-  console.log(list);
+    console.log(item);
 
-  if (list !== '') {
-    let n = 0;
-    let id = '';
+    if (item !== '') {
+      let n = 0;
+      let id = '';
 
-    bodyUser.appendChild(tr);
-    td1.innerHTML = `${list.id}`;
-    td2.innerHTML = `${list.name}`;
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-  }
-});
+      bodyUser.appendChild(tr);
+      td1.innerHTML = `${item.id}`;
+      td2.innerHTML = `${item.name}`;
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+    }
+  });
+}
+
+showList(userList);
 
 //create a new user
 btnUser.addEventListener('click', (e) => {
