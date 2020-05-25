@@ -33,7 +33,7 @@
 
 <h4>Second step</h4>
 <p>Start the 2 files from the front-end on your local server</p>
-<small><span style="color: red;">Note:</span> You can install Live Server extension from VS CODE</small>
+<p style="font-size: 8px;"><span style="color: red;">Note:</span> You can install Live Server extension from VS CODE</p>
 <ul>
   <li>~/frontend/index.html</li>
   <li>~/frontend/list.html</li>
