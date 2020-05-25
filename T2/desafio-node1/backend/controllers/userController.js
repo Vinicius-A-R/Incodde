@@ -20,6 +20,7 @@ function checkUserExists(req, res, next) {
 
 function checkUserInArray(req, res, next) {
   const user = users[req.params.index];
+  console.log(user);
   if (!user) {
     return res.status(400).send({ error: 'User does not exists!' });
   }
@@ -58,7 +59,7 @@ const deleteUser = (req, res) => {
 
   users.splice(index, 1);
 
-  return res.send({ message: 'User was deleted' });
+  return res.status(204).send({ message: 'User was deleted' });
 };
 
 module.exports = {

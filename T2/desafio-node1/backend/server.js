@@ -1,11 +1,19 @@
 const express = require('express');
-const server = express();
+const cors = require('cors');
+
+const userController = require('./controllers/userController');
 const host = 'http://localhost:';
 const port = 5000;
 
-server.use(express.json());
+const server = express();
 
-const userController = require('./controllers/userController');
+const corsOptions = {
+  origin: `${host}${port}/users`,
+};
+
+// server.use(cors(corsOptions));
+server.use(cors());
+server.use(express.json());
 
 server.get('/users', userController.getAllUsers);
 
