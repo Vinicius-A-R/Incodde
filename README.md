@@ -4,6 +4,7 @@
 
 During the Incodde immersion we have to learn in 30 days about React JS, Node JS and MongoDB 
 
+---
 > We made some simply applications using this languages
 * First Week
   - HTML 
