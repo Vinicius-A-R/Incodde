@@ -1,9 +1,7 @@
-<h2>Google interface make with ReactJS</h2>
+# Google interface with ReactJS
 
-<h3>How to Start</h3>
+## How to Start
 
-<p>You can start with npm or yarn</p>
-<ul>
-  <li>npm run start</li>
-  <li>yarn start</li>
-</ul>
+**You can start with npm or yarn**
+- npm run start
+- yarn start
