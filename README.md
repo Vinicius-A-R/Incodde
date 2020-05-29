@@ -11,7 +11,7 @@ During the Incodde immersion we have to learn in 30 days about React JS, Node JS
   * JS
 
 
-* Second Week
+- Second Week
 > We made Node JS requests to save in MongoDB database
    ** HTML
    * CSS
