@@ -1,4 +1,4 @@
-<h2>Google interface make with ReactJS</h2>
+<h2>Google interface make with React JS</h2>
 
 <h3>How to Start</h3>
 
